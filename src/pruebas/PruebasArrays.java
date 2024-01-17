@@ -6,17 +6,15 @@ import java.util.Scanner;
 public class PruebasArrays {
 
 	public static void main(String[] args) {
-		int tabla1[] = new int[10];
+		int tabla[] = {2,6,5,3,3,6};
+		int tabla2[] = Funciones.tablaPor2(tabla);
 		
-		Arrays.fill(tabla1, 3);
+		System.out.println(Arrays.toString(tabla));
+		System.out.println(Arrays.toString(tabla2));
 		
-		System.out.println(Arrays.toString(tabla1));
+		Funciones.tablaPor2Bis(tabla);
+		System.out.println(Arrays.toString(tabla));
 		
-		Arrays.fill(tabla1, 2, 6, 5);
-		
-		System.out.println(Arrays.toString(tabla1));
-		
-		//sc.close();
 	}
 
 }
