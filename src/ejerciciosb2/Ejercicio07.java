@@ -5,18 +5,20 @@ import java.util.Random;
 
 public class Ejercicio07 {
 
+	public static final int CERO = 0;
+
 	public static void main(String[] args) {
 		int[] ganadora = {3,6,9,15,32,48};
 		int[] apuesta = new int[6];
 		int numero;
-		int aciertos = 0;
-		int i = 0;
+		int aciertos = CERO;
+		int i = CERO;
 		Random rand = new Random(); 
 		
 		while(i<apuesta.length) {
 			numero = rand.nextInt(1, 50);
 			
-			if(busquedaSecuencial(apuesta, numero) < 0) {
+			if(busqueda(apuesta, numero) < CERO) {
 				apuesta[i] = numero;
 				i++;
 			}
@@ -25,7 +27,7 @@ public class Ejercicio07 {
 		System.out.println(Arrays.toString(apuesta));
 		
 		for(int valor : apuesta) {
-			if(Arrays.binarySearch(ganadora, valor)>=0) {
+			if(Arrays.binarySearch(ganadora, valor)>=CERO) {
 				aciertos++;
 			}
 		}
@@ -33,8 +35,8 @@ public class Ejercicio07 {
 		System.out.println("Tienes " + aciertos + " aciertos.");
 	}
 
-	public static int busquedaSecuencial(int[] tabla, int valor) {
-		int indice=0;
+	public static int busqueda(int[] tabla, int valor) {
+		int indice=CERO;
 		
 		while(indice < tabla.length && valor != tabla[indice]) {
 			indice++;
