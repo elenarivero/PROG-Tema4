@@ -24,7 +24,7 @@ public class Ejercicio05 {
 		int sumaColumna = 0;
 		int total = 0;
 		
-		for(int[] fila : sumatorios) {
+		for(final int[] fila : sumatorios) {
 			sumaFila = 0;
 			for (int valor: fila) {
 				System.out.print(valor + "\t");
